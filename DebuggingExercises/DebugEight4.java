@@ -6,7 +6,8 @@ public class DebugEight4
    public static void main(String[] args)
    {
       int x = 0, y;
-      String array[] = new String[100];
+      int count = 0;
+      String[] array = new String[100];
       String entry;
       final String STOP = "XXX";
       StringBuffer message = new
@@ -14,16 +15,18 @@ public class DebugEight4
      
       entry = JOptionPane.showInputDialog(null,
         "Enter any word\n" +
-        "Enter " + STOP " when you want to stop"); 
-      while(!(entry.equals(STOP))
-      {
-         array[STOP] = entry;
-         entry = JOptionPane.showinputDialog(null,
-            "Enter another word\n" +
-            "Enter " + STOP + " when you want to stop"); 
+        "Enter " + STOP +" when you want to stop");
+
+      while(!(entry.equals(STOP))) {
+         array[count] = entry;
+         System.out.println(array[count]);
+         count += 1;
+         entry = JOptionPane.showInputDialog(null,
+                 "Enter any word\n" + "Enter " + STOP +" when you want to stop");
       }
-      for(y = 0; y > 0; ++y);
+      for(y = count - 1; y >= 0; --y)
       {
+         System.out.println(array[y]);
          message.append(array[y]);
          message.append("\n");
       }
